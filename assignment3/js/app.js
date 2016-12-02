@@ -60,7 +60,7 @@
         url:URL
       }).then(function (response) {
         //The list from the server is filtered by the input term.
-        var foundItems = $filter("filter")(response.data.menu_items, {name :nameFilter});
+        var foundItems = $filter("filter")(response.data.menu_items, {description :nameFilter});
         return foundItems;
       });
     }
