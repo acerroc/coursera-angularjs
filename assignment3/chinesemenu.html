@@ -1,0 +1,21 @@
+<div class="loader" ng-show="loading"></div>
+<table class ="table table-striped" ng-show ="foundItems.length>0">
+  <thead>
+    <th>Short Name</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in foundItems">
+      <td>{{item.short_name}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.description}}</td>
+      <td>
+        <button ng-click="onRemove({index : $index})" class ="btn btn-default" type="button" name="button">
+          Don't want this one!
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
