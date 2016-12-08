@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Shopping List With Components</title>
+    <link rel="stylesheet" href="/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <script src="js/angular.min.js" charset="utf-8"></script>
+    <script src="js/app.js" charset="utf-8"></script>
+  </head>
+  <body ng-app="ShoppingListApp">
+    <div ng-controller="ShoppingListController as ctrl" class="container">
+      <h1>Shopping List With Components</h1>
+
+      <input type="text" name="" ng-model="ctrl.itemName" placeholder="item name" value="">
+      <input type="text" name="" ng-model="ctrl.itemQuantity" placeholder="quantity" value="">
+
+      <button type="button" name="button" ng-click="ctrl.addItem();" class="btn btn-primary" >Add Item</button>
+
+      <shopping-list  list-items="ctrl.listItems" title = "{{ctrl.title}}" on-remove = "ctrl.removeItem(index);"></shopping-list>
+    </div>
+  </body>
+</html>
