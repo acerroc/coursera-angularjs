@@ -6,8 +6,7 @@
 
   MainCategoriesList.$inject= ['categories'];
   function MainCategoriesList(categories) {
-    var categoriesList = this
-    var items = [];
+    var categoriesList = this;    
 
     categoriesList.$onInit = function () {
         // console.log(categories);
