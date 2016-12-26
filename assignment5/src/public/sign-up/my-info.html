@@ -1,0 +1,26 @@
+<div class="container" ng-if="myInfoCtrl.user!==undefined">
+  <div class="col-md-4">
+    <div class="row">
+      <label for="fName">First Name:</label>
+      <span id="fName">{{myInfoCtrl.user.fName}}</span>
+    </div>
+    <div class="row">
+      <label for="lName">Last Name:</label>
+      <span id="lName">{{myInfoCtrl.user.lName}}</span>
+    </div>
+    <div class="row">
+      <label for="email">Email:</label>
+      <span id="email">{{myInfoCtrl.user.email}}</span>
+    </div>
+    <div class="row">
+      <label for="phone">Phone Number:</label>
+      <span id="phone">{{myInfoCtrl.user.phone}}</span>
+    </div>   
+  </div>
+    <menu-item  menu-item="myInfoCtrl.user.menuItem">
+    </menu-item>
+
+</div>
+<div class="container" ng-if="myInfoCtrl.user===undefined">
+  Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
+</div>

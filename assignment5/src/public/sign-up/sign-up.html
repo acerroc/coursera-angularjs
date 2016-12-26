@@ -1,0 +1,51 @@
+<div class="container" ng-controller ="SignUpController as signUp" >
+  <h2 class="text-center">Sign up to recieve our newsletter</h2>
+  <div class="form-container ">
+    <form class="" name="regForm" novalidate>
+        <div class="form-group has-feedback"  ng-class="{ 'has-error': regForm.fName.$error.required && regForm.fName.$touched }">
+
+            <input type="text" class="form-control" ng-model="signUp.user.fName" name="fName" placeholder="First Name" required>
+            <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+
+            <span class="help-block" ng-if="(regForm.fName.$error.required && regForm.fName.$touched)">This is a mandatory field.</span>
+        </div>
+        <div class="form-group has-feedback" ng-class="{ 'has-error': regForm.lName.$error.required && regForm.lName.$touched }">
+
+            <input type="text" class="form-control" ng-model="signUp.user.lName" name="lName"  placeholder="Last Name"  required>
+            <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+
+            <span class="help-block" ng-if="(regForm.lName.$error.required && regForm.lName.$touched)">This is a mandatory field.</span>
+        </div>
+        <div class="form-group has-feedback" ng-class="{ 'has-error': regForm.email.$invalid && regForm.email.$touched }">
+
+          <input type="email" class="form-control" ng-model="signUp.user.email" name="email" placeholder="Email"  required>
+          <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+
+          <span class="help-block" ng-if="(regForm.email.$invalid && regForm.email.$touched)">Not valid email.</span>
+        </div>
+        <div class="form-group has-feedback" ng-class="{ 'has-error': regForm.phone.$error.required && regForm.phone.$touched }">
+
+          <input type="text" class="form-control" ng-model="signUp.user.phone" name="phone" placeholder="Phone Number"  required>
+          <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+
+          <span class="help-block" ng-if="(regForm.phone.$error.required && regForm.phone.$touched)">This is a mandatory field.</span>
+        </div>
+        <div class="form-group has-feedback" ng-click ="signUp.notFound = undefined" ng-class="{ 'has-error': signUp.notFound, 'has-success': signUp.notFound !=undefined && !signUp.notFound }">
+
+          <input type="text" class="form-control" ng-model="signUp.user.dish" name="fDish" placeholder="The Number Of Your Favorite Dish"></input>
+          <span ng-if="signUp.notFound" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+          <span ng-if="signUp.notFound !=undefined && !signUp.notFound " class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+
+          <span class="help-block" ng-if="signUp.notFound">{{signUp.user.dish}} doesn't exist, try again! :)</span>
+
+        </div>
+        <div class="form-group text-center">
+              <button type="submit" ng-disabled="regForm.$invalid" class="btn btn-primary" ng-click="signUp.submit()">Submit</button>
+        </div>
+
+
+    </form>
+  </div>
+
+
+</div>
