@@ -37,10 +37,11 @@
           <span ng-if="signUp.notFound !=undefined && !signUp.notFound " class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
 
           <span class="help-block" ng-if="signUp.notFound">{{signUp.user.dish}} doesn't exist, try again! :)</span>
-
+          <span class="help-block" ng-if="signUp.notFound !=undefined && !signUp.notFound ">Your information has been saved</span>
         </div>
-        <div class="form-group text-center">
+        <div class="form-group text-center ">
               <button type="submit" ng-disabled="regForm.$invalid" class="btn btn-primary" ng-click="signUp.submit()">Submit</button>
+
         </div>
 
 
